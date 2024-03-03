@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
 import React from "react";
 import { StyleSheet, View, TextInput, Button, SafeAreaView, Image } from "react-native";
 
 const SignUpPage = () => {
+  const {
+    entities: Signups
+  } = useSelector(state => state.Signups);
   return <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
         <Image source={{
@@ -9,12 +13,12 @@ const SignUpPage = () => {
       }} style={styles.logo} />
       </View>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" />
+        <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" data={Signups} />
         <TextInput style={styles.input} placeholder="Password" secureTextEntry />
         <TextInput style={styles.input} placeholder="Confirm Password" secureTextEntry />
       </View>
       <View style={styles.buttonContainer}>
-        <Button title="Sign Up" onPress={() => {}} />
+        <Button title="Sign Up" onPress={() => {}} data={Signups} />
       </View>
     </SafeAreaView>;
 };
@@ -24,7 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff'
+    backgroundColor: "#f9f9f9"
   },
   logoContainer: {
     marginBottom: 20
