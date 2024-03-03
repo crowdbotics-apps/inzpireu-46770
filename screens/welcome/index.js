@@ -1,39 +1,32 @@
-import React from "react"
-import {
-  View,
-  Image,
-  Text,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet
-} from "react-native"
+import React from "react";
+import { View, Image, Text, ScrollView, SafeAreaView, StyleSheet } from "react-native";
 
 const WelcomeScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
+  return <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
-        <View style={styles.group} />
         <View style={styles.group}>
-          <Image style={styles.logo} source={require("./logo.png")} />
+          <Image style={styles.logo} source={require("./InzpireU (4).png")} />
           <Text style={styles.text}>
-            Let's build something amazing together!
+            Welcome to our mentoring platform!
+          </Text>
+          <Text style={styles.subText}>
+            Connect, learn, and grow with experts.
           </Text>
         </View>
-        <Text style={styles.footer}>Made with ❤️ by Crowdbotics</Text>
+        <Text style={styles.footer}>Empowering connections, one mentorship at a time.</Text>
       </ScrollView>
-    </SafeAreaView>
-  )
-}
+    </SafeAreaView>;
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#F8F8FC",
+    backgroundColor: "#000000",
     height: "100%"
   },
   scrollView: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     padding: 20
   },
   group: {
@@ -50,15 +43,21 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 28,
     color: "#828AB0",
-    fontWeight: 700
+    fontWeight: "700"
+  },
+  subText: {
+    textAlign: "center",
+    fontSize: 20,
+    color: "#828AB0",
+    fontWeight: "500",
+    marginTop: 10
   },
   footer: {
     textAlign: "center",
     fontSize: 18,
     color: "#828AB0",
-    fontWeight: 700,
-    marginBottom: 20
+    fontWeight: "700",
+    marginTop: 20
   }
-})
-
-export default WelcomeScreen
+});
+export default WelcomeScreen;
