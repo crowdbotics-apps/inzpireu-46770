@@ -1,19 +1,28 @@
+import { useSelector } from "react-redux";
 import React from "react";
-import { View, Image, Text, ScrollView, SafeAreaView, StyleSheet } from "react-native";
+import { View, Image, Text, ScrollView, SafeAreaView, StyleSheet, Button } from "react-native";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({
+  navigation
+}) => {
+  const {
+    entities: Signups
+  } = useSelector(state => state.Signups);
   return <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={styles.group}>
-          <Image style={styles.logo} source={require("./InzpireU (4).png")} />
-          <Text style={styles.text}>
-            Welcome to our mentoring platform!
-          </Text>
+          <Image style={styles.logo} source={{
+          uri: "https://tinyurl.com/42evm3m3"
+        }} />
+          <Text style={styles.text}>Join Our Mentoring Platform!</Text>
           <Text style={styles.subText}>
             Connect, learn, and grow with experts.
           </Text>
+          <Button title="Sign Up" onPress={() => navigation.navigate('SignUp')} color="#007BFF" data={Signups} style={styles.TRCYFVUn} />
         </View>
-        <Text style={styles.footer}>Empowering connections, one mentorship at a time.</Text>
+        <Text style={styles.footer}>
+          Empowering connections, one mentorship at a time.
+        </Text>
       </ScrollView>
     </SafeAreaView>;
 };
@@ -58,6 +67,12 @@ const styles = StyleSheet.create({
     color: "#828AB0",
     fontWeight: "700",
     marginTop: 20
+  },
+  TRCYFVUn: {
+    position: "absolute",
+    top: 0,
+    left: 157,
+    width: 100
   }
 });
 export default WelcomeScreen;
